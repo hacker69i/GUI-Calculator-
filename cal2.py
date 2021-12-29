@@ -2,14 +2,14 @@
 
 from tkinter import*
 import math
-import parser
+
 import tkinter.messagebox
 
 root = Tk()
 root.title("Scientific Calculator")
 root.configure(background="red")
 root.resizable(width=False, height=False)
-root.geometry("400x424+20+20")
+root.geometry("450x450+20+20")
 
 
 
@@ -17,7 +17,6 @@ calc = Frame(root)
 calc.grid()
 
 
-#=============FUNCTION===================================================================================================
 
 class Calc():
     def __init__(self):
@@ -220,13 +219,12 @@ class Calc():
 
 added_value=Calc()
 
-#================Display================================================================================================
 
-txtDisplay = Entry(calc ,font=("arial",20,"bold"),bg="white",bd=30,width=28,justify=RIGHT)
+txtDisplay = Entry(calc ,font=("arial",20,"bold"),bg="red",bd=30,width=28,justify=RIGHT)
 txtDisplay.grid(row=0,column=0,columnspan=4,pady=1)
 txtDisplay.insert(0,"0")
 
-#==================Numbers==============================================================================================
+
 
 numberpad = "789456123"
 i=0
@@ -238,7 +236,6 @@ for j in range(2,5):
         btn[i]["command"]=lambda x=numberpad[i]: added_value.numberEnter(x)
         i+=1
 
-#========================Standard Function==============================================================================================================================================
 
 btnClear=Button(calc, text=chr(67), width=6, height=2, font=('arial', 20, 'bold'), bd=4, fg="black", bg="gray5", command=added_value.Clear_Entry).grid(row=1, column=0, pady=1)
 btnAllClear=Button(calc, text=chr(67)+chr(69), width=6, height=2, font=('arial', 20, 'bold'), bd=4, fg="black", bg="gray5", command=added_value.all_Clear_Entry).grid(row=1, column=1, pady=1)
@@ -257,7 +254,6 @@ btnPM=Button(calc, text=chr(177), width=6, height=2, font=('arial', 20, 'bold'),
 
 btnEquals=Button(calc, text="=", width=6, height=2, font=('arial', 20, 'bold'), bd=4, bg="black", command=added_value.sum_of_total).grid(row=5, column=3, pady=1)
 
-#===================Scientific Calculator====================================================================================================================================================
 
 btnPi=Button(calc, text='π', width=6, height=2, font=('arial', 20, 'bold'), bd=4, fg="black", bg="gray5", command=added_value.pi).grid(row=1, column=4, pady=1)
 btnCos=Button(calc, text="cos", width=6, height=2, font=('arial', 20, 'bold'), bd=4, fg="black", bg="gray5", command=added_value.cos).grid(row=1, column=5, pady=1)
@@ -289,7 +285,7 @@ btnLog1p=Button(calc, text="log1p", width=6, height=2, font=('arial', 20, 'bold'
 btnExpm1=Button(calc, text="expm1", width=6, height=2, font=('arial', 20, 'bold'), bd=4, fg="black", bg="gray5", command=added_value.expm1).grid(row=5, column=6, pady=1)
 btnLgamma=Button(calc, text="lgamma", width=6, height=2, font=('arial', 20, 'bold'), bd=4, fg="black", bg="gray5", command=added_value.lgamma).grid(row=5, column=7, pady=1)
 
-#===============================Display Text======================================================================================================================================
+
 
 lblDisplay=Label(calc, text="Scientific Calculator", font=('arial', 20), justify =CENTER)
 lblDisplay.grid(row=0, column=4, columnspan=4)
@@ -298,8 +294,7 @@ lblDisplay=Label(calc, text="", font=('arial', 30, 'bold'), justify =CENTER)
 lblDisplay.grid(row=6, column=0, columnspan=4)
 
 
-                   
-#=======================Menu and function===========================================================
+
 
 def iExit():
     iExit = tkinter.messagebox.askyesno("Scientific Calculator", "Confirm if you want to exit")
@@ -309,11 +304,11 @@ def iExit():
 
 def Scientific():
     root.resizable(width=False, height=False)
-    root.geometry("705x424+20+20")
+    root.geometry("895x450+20+20")
 
 def Standard():
     root.resizable(width=True, height=False)
-    root.geometry("400x424+20+20")
+    root.geometry("450x450+20+20")
 
 
 
